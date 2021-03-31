@@ -1,15 +1,12 @@
 package org.epam.entity;
 
-import org.epam.exception.ArrayEntityException;
+import org.epam.exception.ArrayException;
 
 import java.util.Arrays;
 
 public class ArrayEntity {
-    int[] array;
 
-    public ArrayEntity(){
-
-    }
+    private int[] array;
 
     public ArrayEntity(int[] array) {
         this.array = Arrays.copyOf(array, array.length);
@@ -23,19 +20,26 @@ public class ArrayEntity {
         this.array = Arrays.copyOf(array, array.length);
     }
 
-    public int getElement(int index) throws ArrayEntityException {
+    public int getElement(int index) throws ArrayException {
         if (index > array.length || index < 0) {
-            throw new ArrayEntityException("Out of range exception");
+            throw new ArrayException("Out of range exception");
         }
-        return array[index];
+        int currentElement = array[index];
+        return currentElement;
     }
 
-    //todo move to service
-    public void changeElement(int index, int newValue) throws ArrayEntityException {
+    public void setElement(int index, int newValue) throws ArrayException {
         if (index > array.length || index < 0) {
-            throw new ArrayEntityException("Out of range exception");
+            throw new ArrayException("Out of range exception");
         }
         array[index] = newValue;
+    }
+
+    public int getLength() {
+        //fixme null?
+        int size = array.length;
+
+        return size;
     }
 
     @Override
@@ -59,21 +63,20 @@ public class ArrayEntity {
             return false;
         }
 
-        ArrayEntity guest = (ArrayEntity) obj;
-        
-        return id == guest.id
-                && (firstName == guest.firstName
-                || (firstName != null && firstName.equals(guest.getFirstName())))
-                && (lastName == guest.lastName
-                || (lastName != null && lastName .equals(guest.getLastName())));
+        ArrayEntity arrayEntity = (ArrayEntity) obj;
+
+        boolean isEqual = Arrays.equals(arrayEntity.array, this.array);
+
+        return isEqual;
     }
 
     @Override
-    public String toString(){
-        StringBuilder string = new StringBuilder();
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
         for (int element : array) {
-            string.append(element).append(" ");
+            stringBuilder.append(element).append(" ");
         }
-        return string.toString();
+        String string = stringBuilder.toString();
+        return string;
     }
 }
