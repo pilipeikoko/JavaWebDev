@@ -5,7 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.epam.array.entity.ArrayEntity;
 
 public class ArraySort {
-    private final static Logger logger = LogManager.getLogger();
+    private final static Logger LOGGER = LogManager.getLogger();
 
     public void bubbleSort(ArrayEntity arrayEntity) {
         //todo add validator

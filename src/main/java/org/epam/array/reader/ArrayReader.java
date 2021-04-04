@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ArrayReader {
-    private static final Logger logger = LogManager.getLogger();
+    private static final Logger LOGGER = LogManager.getLogger();
 
     public List<String> readArraysFromFile(String path) throws ArrayException {
 
@@ -31,6 +31,7 @@ public class ArrayReader {
             throw new ArrayException("File not found");
         }
 
+        LOGGER.info("Arrays are read. Amount of arrays: " + listOfArrays.size());
         return listOfArrays;
     }
 }

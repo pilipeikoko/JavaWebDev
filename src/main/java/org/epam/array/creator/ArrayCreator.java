@@ -11,27 +11,27 @@ import org.epam.array.validator.ArrayValidator;
 import java.util.List;
 
 public class ArrayCreator {
-    private static final Logger logger = LogManager.getLogger();
+    private static final Logger LOGGER = LogManager.getLogger();
 
     public ArrayEntity createArrayEntityFromFile(String pathToFile) throws ArrayException {
-        ArrayReader arrayReader= new ArrayReader();
+        ArrayReader arrayReader = new ArrayReader();
         List<String> listOfArrays = arrayReader.readArraysFromFile(pathToFile);
 
         ArrayParser arrayParser = new ArrayParser();
         int[] correctArray = arrayParser.findCorrectArray(listOfArrays);
         ArrayEntity correctArrayEntity = new ArrayEntity(correctArray);
 
-        logger.info("Array created");
+        LOGGER.info("Array created: " + correctArrayEntity.toString());
         return correctArrayEntity;
     }
 
     public ArrayEntity createArrayEntityFromArray(int[] array) throws ArrayException {
         ArrayEntity arrayEntity = new ArrayEntity(array);
-        if(!ArrayValidator.validateArray(arrayEntity)){
+        if (!ArrayValidator.validateArray(arrayEntity)) {
             throw new ArrayException("Array cant be empty");
         }
 
-        logger.info("Array created");
+        LOGGER.info("Array created: " + arrayEntity.toString());
 
         return arrayEntity;
     }

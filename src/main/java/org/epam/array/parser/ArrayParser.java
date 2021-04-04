@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ArrayParser {
-    private static final Logger logger = LogManager.getLogger();
+    private static final Logger LOGGER = LogManager.getLogger();
 
     public int[] findCorrectArray(List<String> listOfArrays) throws ArrayException {
         List<Integer> correctArray = new ArrayList<>();
@@ -35,7 +35,7 @@ public class ArrayParser {
             throw new ArrayException("Correct array not found");
         }
 
-        logger.info("Correct array found. Index: " + indexOfCurrentElement);
+        LOGGER.info("Correct array found. Index: " + indexOfCurrentElement);
 
         int[] result = correctArray.
                 stream().

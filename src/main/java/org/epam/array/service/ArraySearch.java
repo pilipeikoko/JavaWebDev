@@ -7,9 +7,9 @@ import org.epam.array.entity.ArrayEntity;
 import org.epam.array.validator.ArrayValidator;
 
 import java.util.stream.IntStream;
-//todo замена элементов массива по условию
+
 public class ArraySearch {
-    private static final Logger logger = LogManager.getLogger();
+    private static final Logger LOGGER = LogManager.getLogger();
 
     public int minimalElement(ArrayEntity arrayEntity) throws ArrayException {
 
@@ -27,7 +27,7 @@ public class ArraySearch {
             }
         }
 
-        logger.info("Minimal element is " + minimalElement);
+        LOGGER.info("Minimal element is " + minimalElement);
         return minimalElement;
     }
 
@@ -48,7 +48,8 @@ public class ArraySearch {
                         return x;
                 });
 
-        //todo add logger
+        LOGGER.info("Minimal element is " + minimalElement);
+
         return minimalElement;
     }
 
@@ -67,7 +68,6 @@ public class ArraySearch {
             }
         }
 
-        logger.info("Maximal element is " + maximalElement);
         return maximalElement;
     }
 
@@ -86,7 +86,7 @@ public class ArraySearch {
                     } else
                         return x;
                 });
-        //todo add logger
+        LOGGER.info("Maximal element is " + maximalElement);
 
         return maximalElement;
     }
@@ -97,7 +97,7 @@ public class ArraySearch {
 
         double averageValue = (double) sum / size;
 
-        logger.info("Average value is " + averageValue);
+        LOGGER.info("Average value is " + averageValue);
         return averageValue;
     }
 
@@ -107,7 +107,7 @@ public class ArraySearch {
 
         double averageValue = (double) sum / size;
 
-        logger.info("Average value is " + averageValue);
+        LOGGER.info("Average value is " + averageValue);
         return averageValue;
     }
 
@@ -122,7 +122,7 @@ public class ArraySearch {
             int element = array.getElement(i);
             sum += element;
         }
-        logger.info("Sum of array element is " + sum);
+        LOGGER.info("Sum of array element is " + sum);
         return sum;
     }
 
@@ -135,7 +135,7 @@ public class ArraySearch {
         int sum = IntStream.of(array.getArray())
                 .reduce(Integer::sum)
                 .getAsInt();
-        //todo add logger
+        LOGGER.info("Sum of array element is " + sum);
 
         return sum;
     }
@@ -156,6 +156,9 @@ public class ArraySearch {
                 ++amountOfPositiveNumbers;
             }
         }
+
+        LOGGER.info("Amount of positive numbers is " + amountOfPositiveNumbers);
+
         return amountOfPositiveNumbers;
     }
 
@@ -168,7 +171,8 @@ public class ArraySearch {
         int amountOfPositiveNumbers = (int) IntStream.of(array.getArray()).
                 filter(x -> x > 0).count();
 
-        //todo add logger
+        LOGGER.info("Amount of positive numbers is " + amountOfPositiveNumbers);
+
         return amountOfPositiveNumbers;
     }
 
@@ -188,6 +192,9 @@ public class ArraySearch {
                 ++amountOfNegativeNumbers;
             }
         }
+
+        LOGGER.info("Amount of negative numbers is " + amountOfNegativeNumbers);
+
         return amountOfNegativeNumbers;
     }
 
@@ -199,7 +206,9 @@ public class ArraySearch {
 
         int amountOfNegativeNumbers = (int) IntStream.of(array.getArray()).
                 filter(x -> x < 0).count();
-        //todo add logger
+
+        LOGGER.info("Amount of negative numbers is " + amountOfNegativeNumbers);
+
         return amountOfNegativeNumbers;
     }
 }
