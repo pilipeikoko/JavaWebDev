@@ -3,12 +3,17 @@ package org.epam.array.service;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.epam.array.entity.ArrayEntity;
+import org.epam.array.exception.ArrayException;
+import org.epam.array.validator.ArrayValidator;
 
 public class ArraySort {
     private final static Logger LOGGER = LogManager.getLogger();
 
-    public void bubbleSort(ArrayEntity arrayEntity) {
-        //todo add validator
+    public void bubbleSort(ArrayEntity arrayEntity) throws ArrayException {
+        if(!ArrayValidator.validateArray(arrayEntity)){
+            throw new ArrayException("Empty or null array");
+        }
+
         int[] array = arrayEntity.getArray();
         int arrayLength = array.length;
 
@@ -23,11 +28,16 @@ public class ArraySort {
             }
         }
         arrayEntity.setArray(array);
-        //todo add logger
+
+        LOGGER.info("Array sorted. " + arrayEntity.toString());
     }
 
-    public void gnomeSort(ArrayEntity arrayEntity) {
-        //todo add validator
+    public void gnomeSort(ArrayEntity arrayEntity) throws ArrayException {
+        if(!ArrayValidator.validateArray(arrayEntity)){
+            throw new ArrayException("Empty or null array");
+        }
+
+
         int[] array = arrayEntity.getArray();
         int arrayLength = array.length;
 
@@ -47,24 +57,25 @@ public class ArraySort {
             }
         }
         arrayEntity.setArray(array);
-        //todo add logger
+
+        LOGGER.info("Array sorted. " + arrayEntity.toString());
     }
 
-    public void cocktailSort(ArrayEntity arrayEntity)
-    {
-        //todo add validator
+    public void cocktailSort(ArrayEntity arrayEntity) throws ArrayException {
+        if(!ArrayValidator.validateArray(arrayEntity)){
+            throw new ArrayException("Empty or null array");
+        }
+
         int[] array = arrayEntity.getArray();
         boolean elementSwapped = true;
 
         int startIndex = 0;
         int endIndex = array.length;
 
-        while (elementSwapped)
-        {
+        while (elementSwapped) {
             elementSwapped = false;
 
-            for (int i = startIndex; i < endIndex - 1; ++i)
-            {
+            for (int i = startIndex; i < endIndex - 1; ++i) {
                 if (array[i] > array[i + 1]) {
                     int temp = array[i];
                     array[i] = array[i + 1];
@@ -78,10 +89,8 @@ public class ArraySort {
             elementSwapped = false;
 
             endIndex = endIndex - 1;
-            for (int i = endIndex - 1; i >= startIndex; i--)
-            {
-                if (array[i] > array[i + 1])
-                {
+            for (int i = endIndex - 1; i >= startIndex; i--) {
+                if (array[i] > array[i + 1]) {
                     int temp = array[i];
                     array[i] = array[i + 1];
                     array[i + 1] = temp;
@@ -92,6 +101,7 @@ public class ArraySort {
             startIndex = startIndex + 1;
         }
         arrayEntity.setArray(array);
-        //todo add logger
+
+        LOGGER.info("Array sorted. " + arrayEntity.toString());
     }
 }

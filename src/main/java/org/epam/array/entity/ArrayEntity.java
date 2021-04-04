@@ -36,7 +36,7 @@ public class ArrayEntity {
     }
 
     public int getLength() throws ArrayException {
-        if(this.array.length == 0){
+        if (this.array.length == 0) {
             throw new ArrayException("Array is empty");
         }
         int size = array.length;

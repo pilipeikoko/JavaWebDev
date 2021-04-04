@@ -46,7 +46,7 @@ public class ArrayEntityTest {
         Assert.assertEquals(expectedLength,currentLength);
     }
 
-    @Test(expectedExceptions = ArrayException.class)
+    @Test(expectedExceptions = ArrayException.class, expectedExceptionsMessageRegExp = "Array is empty")
     public void getLengthThrowsTest() throws ArrayException {
         int[] array = {};
         ArrayEntity arrayEntity = new ArrayEntity(array);

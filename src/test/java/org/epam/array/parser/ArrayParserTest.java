@@ -22,7 +22,7 @@ public class ArrayParserTest {
         Assert.assertEquals(expectedArray,foundArray);
     }
 
-    @Test(expectedExceptions = ArrayException.class)
+    @Test(expectedExceptions = ArrayException.class, expectedExceptionsMessageRegExp = "Correct array not found")
     public void findCorrectArrayThrowsTest() throws ArrayException{
         List<String> listOfArrays = new ArrayList<>();
         listOfArrays.add("a 2 ,3");

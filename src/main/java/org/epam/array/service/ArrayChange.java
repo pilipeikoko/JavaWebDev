@@ -10,7 +10,7 @@ public class ArrayChange {
     private static final Logger LOGGER = LogManager.getLogger();
 
     public void changePrimeElementsToNewValue(ArrayEntity arrayEntity, int newValue) throws ArrayException {
-        if(!ArrayValidator.validateArray(arrayEntity)){
+        if (!ArrayValidator.validateArray(arrayEntity)) {
             throw new ArrayException("Empty or null array");
         }
 
@@ -25,7 +25,7 @@ public class ArrayChange {
             }
         }
 
-        LOGGER.info("Changed " + amountOfChangedElements + " elements to "+ newValue);
+        LOGGER.info("Changed " + amountOfChangedElements + " elements to " + newValue);
     }
 
     private boolean isPrime(int number) {

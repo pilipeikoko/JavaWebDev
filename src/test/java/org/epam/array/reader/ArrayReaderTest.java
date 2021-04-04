@@ -24,7 +24,7 @@ public class ArrayReaderTest {
         Assert.assertEquals(expectedListOfArrays,currentListOfArrays);
     }
 
-    @Test(description = "Wrong path",expectedExceptions = ArrayException.class)
+    @Test(description = "Wrong path",expectedExceptions = ArrayException.class,expectedExceptionsMessageRegExp = "File not found")
     public void arrayReaderThrowsTest() throws ArrayException{
         String pathToFile = "src\\test\\resources\\arraysData\\wrongPath.txt";
 

@@ -1,8 +1,8 @@
 package org.epam.array.exception;
 
-public class ArrayException extends Exception{
+public class ArrayException extends Exception {
 
-    public ArrayException(){
+    public ArrayException() {
         super();
     }
 

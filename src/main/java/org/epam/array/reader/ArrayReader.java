@@ -27,7 +27,7 @@ public class ArrayReader {
             }
 
             scanner.close();
-        } catch(FileNotFoundException exception){
+        } catch (FileNotFoundException exception) {
             throw new ArrayException("File not found");
         }
 

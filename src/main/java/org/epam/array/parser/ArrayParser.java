@@ -5,7 +5,6 @@ import org.apache.logging.log4j.Logger;
 import org.epam.array.exception.ArrayException;
 import org.epam.array.validator.ArrayValidator;
 
-
 import java.util.ArrayList;
 import java.util.List;
 

@@ -17,6 +17,5 @@ public class ArrayValidator {
 
         return isArrayValid;
     }
-
-    //todo add validator to file
+    //todo file path validator?
 }
