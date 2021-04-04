@@ -1,4 +1,4 @@
-package org.epam.exception;
+package org.epam.array.exception;
 
 public class ArrayException extends Exception{
 

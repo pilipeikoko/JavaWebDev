@@ -1,6 +1,6 @@
-package org.epam.entity;
+package org.epam.array.entity;
 
-import org.epam.exception.ArrayException;
+import org.epam.array.exception.ArrayException;
 
 import java.util.Arrays;
 
@@ -21,8 +21,8 @@ public class ArrayEntity {
     }
 
     public int getElement(int index) throws ArrayException {
-        if (index > array.length || index < 0) {
-            throw new ArrayException("Out of range exception");
+        if (index >= array.length || index < 0) {
+            throw new ArrayException("Out of range exception. Index: " + index);
         }
         int currentElement = array[index];
         return currentElement;
@@ -35,8 +35,10 @@ public class ArrayEntity {
         array[index] = newValue;
     }
 
-    public int getLength() {
-        //fixme null?
+    public int getLength() throws ArrayException {
+        if(this.array.length == 0){
+            throw new ArrayException("Array is empty");
+        }
         int size = array.length;
 
         return size;
@@ -76,7 +78,7 @@ public class ArrayEntity {
         for (int element : array) {
             stringBuilder.append(element).append(" ");
         }
-        String string = stringBuilder.toString();
-        return string;
+        String result = stringBuilder.toString();
+        return result;
     }
 }

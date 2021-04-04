@@ -1,8 +1,8 @@
-package org.epam.service;
+package org.epam.array.service;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.epam.entity.ArrayEntity;
+import org.epam.array.entity.ArrayEntity;
 
 public class ArraySort {
     private final static Logger logger = LogManager.getLogger();
@@ -22,6 +22,7 @@ public class ArraySort {
                 }
             }
         }
+        arrayEntity.setArray(array);
         //todo add logger
     }
 
@@ -45,6 +46,7 @@ public class ArraySort {
                 --currentIndex;
             }
         }
+        arrayEntity.setArray(array);
         //todo add logger
     }
 
@@ -89,6 +91,7 @@ public class ArraySort {
 
             startIndex = startIndex + 1;
         }
+        arrayEntity.setArray(array);
         //todo add logger
     }
 }

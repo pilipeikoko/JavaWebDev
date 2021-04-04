@@ -1,17 +1,17 @@
-package org.epam.service;
+package org.epam.array.service;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.epam.entity.ArrayEntity;
-import org.epam.exception.ArrayException;
-import org.epam.validator.ArrayValidator;
+import org.epam.array.exception.ArrayException;
+import org.epam.array.entity.ArrayEntity;
+import org.epam.array.validator.ArrayValidator;
 
 import java.util.stream.IntStream;
 //todo замена элементов массива по условию
 public class ArraySearch {
     private static final Logger logger = LogManager.getLogger();
 
-    public int findMinimalElement(ArrayEntity arrayEntity) throws ArrayException {
+    public int minimalElement(ArrayEntity arrayEntity) throws ArrayException {
 
         if (!ArrayValidator.validateArray(arrayEntity)) {
             throw new ArrayException("Empty or null array");
@@ -31,7 +31,7 @@ public class ArraySearch {
         return minimalElement;
     }
 
-    public int findMinimalElementByStream(ArrayEntity array) throws ArrayException {
+    public int minimalElementByStream(ArrayEntity array) throws ArrayException {
 
         if (!ArrayValidator.validateArray(array)) {
             throw new ArrayException("Empty or null array");
@@ -52,7 +52,7 @@ public class ArraySearch {
         return minimalElement;
     }
 
-    public int findMaximalElement(ArrayEntity array) throws ArrayException {
+    public int maximalElement(ArrayEntity array) throws ArrayException {
         if (!ArrayValidator.validateArray(array)) {
             throw new ArrayException("Empty or null array");
         }
@@ -62,7 +62,7 @@ public class ArraySearch {
         for (int i = 1; i < array.getLength(); ++i) {
             int currentElement = array.getElement(i);
 
-            if (currentElement < maximalElement) {
+            if (currentElement > maximalElement) {
                 maximalElement = currentElement;
             }
         }
@@ -71,7 +71,7 @@ public class ArraySearch {
         return maximalElement;
     }
 
-    public int findMaximalElementByStream(ArrayEntity array) throws ArrayException {
+    public int maximalElementByStream(ArrayEntity array) throws ArrayException {
         if (!ArrayValidator.validateArray(array)) {
             throw new ArrayException("Empty or null array");
         }
@@ -91,8 +91,8 @@ public class ArraySearch {
         return maximalElement;
     }
 
-    public double findAverage(ArrayEntity array) throws ArrayException {
-        int sum = findSum(array);
+    public double average(ArrayEntity array) throws ArrayException {
+        int sum = sum(array);
         int size = array.getLength();
 
         double averageValue = (double) sum / size;
@@ -101,8 +101,8 @@ public class ArraySearch {
         return averageValue;
     }
 
-    public double findAverageByStream(ArrayEntity array) throws ArrayException {
-        int sum = findSumByStream(array);
+    public double averageByStream(ArrayEntity array) throws ArrayException {
+        int sum = sumByStream(array);
         int size = array.getLength();
 
         double averageValue = (double) sum / size;
@@ -111,7 +111,7 @@ public class ArraySearch {
         return averageValue;
     }
 
-    public int findSum(ArrayEntity array) throws ArrayException {
+    public int sum(ArrayEntity array) throws ArrayException {
 
         if (!ArrayValidator.validateArray(array)) {
             throw new ArrayException("Empty or null array");
@@ -126,7 +126,7 @@ public class ArraySearch {
         return sum;
     }
 
-    public int findSumByStream(ArrayEntity array) throws ArrayException {
+    public int sumByStream(ArrayEntity array) throws ArrayException {
 
         if (!ArrayValidator.validateArray(array)) {
             throw new ArrayException("Empty or null array");
@@ -140,7 +140,7 @@ public class ArraySearch {
         return sum;
     }
 
-    public int findAmountOfPositiveNumbers(ArrayEntity array) throws ArrayException {
+    public int amountOfPositiveNumbers(ArrayEntity array) throws ArrayException {
 
         if (!ArrayValidator.validateArray(array)) {
             throw new ArrayException("Empty or null array");
@@ -159,7 +159,20 @@ public class ArraySearch {
         return amountOfPositiveNumbers;
     }
 
-    public int findAmountOfNegativeNumbers(ArrayEntity array) throws ArrayException {
+    public int amountOfPositiveNumbersByStream(ArrayEntity array) throws ArrayException {
+
+        if (!ArrayValidator.validateArray(array)) {
+            throw new ArrayException("Empty or null array");
+        }
+
+        int amountOfPositiveNumbers = (int) IntStream.of(array.getArray()).
+                filter(x -> x > 0).count();
+
+        //todo add logger
+        return amountOfPositiveNumbers;
+    }
+
+    public int amountOfNegativeNumbers(ArrayEntity array) throws ArrayException {
 
         if (!ArrayValidator.validateArray(array)) {
             throw new ArrayException("Empty or null array");
@@ -178,20 +191,7 @@ public class ArraySearch {
         return amountOfNegativeNumbers;
     }
 
-    public int findAmountOfPositiveNumbersByStream(ArrayEntity array) throws ArrayException {
-
-        if (!ArrayValidator.validateArray(array)) {
-            throw new ArrayException("Empty or null array");
-        }
-
-        int amountOfPositiveNumbers = (int) IntStream.of(array.getArray()).
-                filter(x -> x > 0).count();
-
-        //todo add logger
-        return amountOfPositiveNumbers;
-    }
-
-    public int findAmountOfNegativeNumbersByStream(ArrayEntity array) throws ArrayException {
+    public int amountOfNegativeNumbersByStream(ArrayEntity array) throws ArrayException {
 
         if (!ArrayValidator.validateArray(array)) {
             throw new ArrayException("Empty or null array");
