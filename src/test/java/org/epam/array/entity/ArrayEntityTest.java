@@ -2,7 +2,6 @@ package org.epam.array.entity;
 
 import org.epam.array.exception.ArrayException;
 import org.junit.Assert;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class ArrayEntityTest {

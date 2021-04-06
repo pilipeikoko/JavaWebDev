@@ -16,19 +16,6 @@ public class ArrayCreatorTest {
         int[] expectedArray = {-3, 231, 3, 2};
         int[] currentArray = arrayEntity.getArray();
 
-
         Assert.assertEquals(expectedArray, currentArray);
-    }
-
-    @Test
-    public void arrayEntityCreateFromArrayTest() throws ArrayException {
-        int[] expectedArray = { 1,2,3,-4};
-
-        ArrayCreator arrayCreator = new ArrayCreator();
-        ArrayEntity arrayEntity = arrayCreator.createArrayEntityFromArray(expectedArray);
-
-        int[] currentArray = arrayEntity.getArray();
-
-        Assert.assertEquals(currentArray,expectedArray);
     }
 }

@@ -19,14 +19,13 @@ public class ArrayReader {
 
         File file = new File(path);
 
-        try {
-            Scanner scanner = new Scanner(file);
+        try (Scanner scanner = new Scanner(file)) {
+
             while (scanner.hasNext()) {
                 String array = scanner.nextLine();
                 listOfArrays.add(array);
             }
 
-            scanner.close();
         } catch (FileNotFoundException exception) {
             throw new ArrayException("File not found");
         }

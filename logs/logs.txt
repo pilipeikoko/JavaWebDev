@@ -1,0 +1,44 @@
+2021-04-06 21:06:49 [main] INFO  org.epam.array.service.ArrayChange - Changed 4 elements to 2
+2021-04-06 21:06:49 [main] INFO  org.epam.array.reader.ArrayReader - Arrays are read. Amount of arrays: 3
+2021-04-06 21:06:49 [main] INFO  org.epam.array.parser.ArrayParser - Correct array found. Index: 1
+2021-04-06 21:06:49 [main] INFO  org.epam.array.creator.ArrayCreator - Array created: -3 231 3 2 
+2021-04-06 21:06:49 [main] INFO  org.epam.array.parser.ArrayParser - Correct array found. Index: 2
+2021-04-06 21:06:49 [main] INFO  org.epam.array.reader.ArrayReader - Arrays are read. Amount of arrays: 3
+2021-04-06 21:06:49 [main] INFO  org.epam.array.service.ArraySearch - Amount of negative numbers is 4
+2021-04-06 21:06:49 [main] INFO  org.epam.array.service.ArraySearch - Amount of negative numbers is 3
+2021-04-06 21:06:49 [main] INFO  org.epam.array.service.ArraySearch - Amount of positive numbers is 3
+2021-04-06 21:06:49 [main] INFO  org.epam.array.service.ArraySearch - Amount of positive numbers is 4
+2021-04-06 21:06:49 [main] INFO  org.epam.array.service.ArraySearch - Sum of array elements is 14
+2021-04-06 21:06:49 [main] INFO  org.epam.array.service.ArraySearch - Average value is 2.3333333333333335
+2021-04-06 21:06:49 [main] INFO  org.epam.array.service.ArraySearch - Sum of array elements is 102
+2021-04-06 21:06:49 [main] INFO  org.epam.array.service.ArraySearch - Average value is 17.0
+2021-04-06 21:06:49 [main] INFO  org.epam.array.service.ArraySearch - Maximal element is 93
+2021-04-06 21:06:49 [main] INFO  org.epam.array.service.ArraySearch - Minimal element is -10
+2021-04-06 21:06:49 [main] INFO  org.epam.array.service.ArraySearch - Minimal element is -4
+2021-04-06 21:06:49 [main] INFO  org.epam.array.service.ArraySearch - Sum of array elements is 8
+2021-04-06 21:06:49 [main] INFO  org.epam.array.service.ArraySearch - Sum of array elements is 14
+2021-04-06 21:06:49 [main] INFO  org.epam.array.service.ArraySort - Array sorted. -2 -1 1 5 7 10 12 
+2021-04-06 21:06:49 [main] INFO  org.epam.array.service.ArraySort - Array sorted. -2 -1 1 5 7 10 12 
+2021-04-06 21:06:49 [main] INFO  org.epam.array.service.ArraySort - Array sorted. -2 -1 1 5 7 10 12 
+2021-04-06 21:07:42 [main] INFO  org.epam.array.service.ArrayChange - Changed 4 elements to 2
+2021-04-06 21:07:42 [main] INFO  org.epam.array.reader.ArrayReader - Arrays are read. Amount of arrays: 3
+2021-04-06 21:07:42 [main] INFO  org.epam.array.parser.ArrayParser - Correct array found. Index: 1
+2021-04-06 21:07:42 [main] INFO  org.epam.array.creator.ArrayCreator - Array created: -3 231 3 2 
+2021-04-06 21:07:42 [main] INFO  org.epam.array.parser.ArrayParser - Correct array found. Index: 2
+2021-04-06 21:07:42 [main] INFO  org.epam.array.reader.ArrayReader - Arrays are read. Amount of arrays: 3
+2021-04-06 21:07:42 [main] INFO  org.epam.array.service.ArraySearch - Amount of negative numbers is 4
+2021-04-06 21:07:42 [main] INFO  org.epam.array.service.ArraySearch - Amount of negative numbers is 3
+2021-04-06 21:07:42 [main] INFO  org.epam.array.service.ArraySearch - Amount of positive numbers is 3
+2021-04-06 21:07:42 [main] INFO  org.epam.array.service.ArraySearch - Amount of positive numbers is 4
+2021-04-06 21:07:42 [main] INFO  org.epam.array.service.ArraySearch - Sum of array elements is 14
+2021-04-06 21:07:42 [main] INFO  org.epam.array.service.ArraySearch - Average value is 2.3333333333333335
+2021-04-06 21:07:42 [main] INFO  org.epam.array.service.ArraySearch - Sum of array elements is 102
+2021-04-06 21:07:42 [main] INFO  org.epam.array.service.ArraySearch - Average value is 17.0
+2021-04-06 21:07:42 [main] INFO  org.epam.array.service.ArraySearch - Maximal element is 93
+2021-04-06 21:07:42 [main] INFO  org.epam.array.service.ArraySearch - Minimal element is -10
+2021-04-06 21:07:42 [main] INFO  org.epam.array.service.ArraySearch - Minimal element is -4
+2021-04-06 21:07:43 [main] INFO  org.epam.array.service.ArraySearch - Sum of array elements is 8
+2021-04-06 21:07:43 [main] INFO  org.epam.array.service.ArraySearch - Sum of array elements is 14
+2021-04-06 21:07:43 [main] INFO  org.epam.array.service.ArraySort - Array sorted. -2 -1 1 5 7 10 12 
+2021-04-06 21:07:43 [main] INFO  org.epam.array.service.ArraySort - Array sorted. -2 -1 1 5 7 10 12 
+2021-04-06 21:07:43 [main] INFO  org.epam.array.service.ArraySort - Array sorted. -2 -1 1 5 7 10 12 

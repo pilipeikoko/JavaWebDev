@@ -24,15 +24,4 @@ public class ArrayCreator {
         LOGGER.info("Array created: " + correctArrayEntity.toString());
         return correctArrayEntity;
     }
-
-    public ArrayEntity createArrayEntityFromArray(int[] array) throws ArrayException {
-        ArrayEntity arrayEntity = new ArrayEntity(array);
-        if (!ArrayValidator.validateArray(arrayEntity)) {
-            throw new ArrayException("Array cant be empty");
-        }
-
-        LOGGER.info("Array created: " + arrayEntity.toString());
-
-        return arrayEntity;
-    }
 }

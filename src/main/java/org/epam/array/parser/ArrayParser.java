@@ -18,7 +18,7 @@ public class ArrayParser {
 
         do {
             String currentArray = listOfArrays.get(indexOfCurrentElement);
-            if (ArrayValidator.validateString(currentArray)) {
+            if (ArrayValidator.isArrayStringValid(currentArray)) {
                 String[] splittedArray = currentArray.split(" ");
 
                 for (String value : splittedArray) {

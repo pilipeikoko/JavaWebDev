@@ -13,7 +13,7 @@ public class ArraySearch {
 
     public int minimalElement(ArrayEntity arrayEntity) throws ArrayException {
 
-        if (!ArrayValidator.validateArray(arrayEntity)) {
+        if (!ArrayValidator.isArrayEntityValid(arrayEntity)) {
             throw new ArrayException("Empty or null array");
         }
 
@@ -33,7 +33,7 @@ public class ArraySearch {
 
     public int minimalElementByStream(ArrayEntity array) throws ArrayException {
 
-        if (!ArrayValidator.validateArray(array)) {
+        if (!ArrayValidator.isArrayEntityValid(array)) {
             throw new ArrayException("Empty or null array");
         }
 
@@ -54,7 +54,7 @@ public class ArraySearch {
     }
 
     public int maximalElement(ArrayEntity array) throws ArrayException {
-        if (!ArrayValidator.validateArray(array)) {
+        if (!ArrayValidator.isArrayEntityValid(array)) {
             throw new ArrayException("Empty or null array");
         }
 
@@ -72,7 +72,7 @@ public class ArraySearch {
     }
 
     public int maximalElementByStream(ArrayEntity array) throws ArrayException {
-        if (!ArrayValidator.validateArray(array)) {
+        if (!ArrayValidator.isArrayEntityValid(array)) {
             throw new ArrayException("Empty or null array");
         }
 
@@ -113,7 +113,7 @@ public class ArraySearch {
 
     public int sum(ArrayEntity array) throws ArrayException {
 
-        if (!ArrayValidator.validateArray(array)) {
+        if (!ArrayValidator.isArrayEntityValid(array)) {
             throw new ArrayException("Empty or null array");
         }
 
@@ -122,27 +122,27 @@ public class ArraySearch {
             int element = array.getElement(i);
             sum += element;
         }
-        LOGGER.info("Sum of array element is " + sum);
+        LOGGER.info("Sum of array elements is " + sum);
         return sum;
     }
 
     public int sumByStream(ArrayEntity array) throws ArrayException {
 
-        if (!ArrayValidator.validateArray(array)) {
+        if (!ArrayValidator.isArrayEntityValid(array)) {
             throw new ArrayException("Empty or null array");
         }
 
         int sum = IntStream.of(array.getArray())
                 .reduce(Integer::sum)
                 .getAsInt();
-        LOGGER.info("Sum of array element is " + sum);
+        LOGGER.info("Sum of array elements is " + sum);
 
         return sum;
     }
 
     public int amountOfPositiveNumbers(ArrayEntity array) throws ArrayException {
 
-        if (!ArrayValidator.validateArray(array)) {
+        if (!ArrayValidator.isArrayEntityValid(array)) {
             throw new ArrayException("Empty or null array");
         }
 
@@ -164,7 +164,7 @@ public class ArraySearch {
 
     public int amountOfPositiveNumbersByStream(ArrayEntity array) throws ArrayException {
 
-        if (!ArrayValidator.validateArray(array)) {
+        if (!ArrayValidator.isArrayEntityValid(array)) {
             throw new ArrayException("Empty or null array");
         }
 
@@ -178,7 +178,7 @@ public class ArraySearch {
 
     public int amountOfNegativeNumbers(ArrayEntity array) throws ArrayException {
 
-        if (!ArrayValidator.validateArray(array)) {
+        if (!ArrayValidator.isArrayEntityValid(array)) {
             throw new ArrayException("Empty or null array");
         }
 
@@ -200,7 +200,7 @@ public class ArraySearch {
 
     public int amountOfNegativeNumbersByStream(ArrayEntity array) throws ArrayException {
 
-        if (!ArrayValidator.validateArray(array)) {
+        if (!ArrayValidator.isArrayEntityValid(array)) {
             throw new ArrayException("Empty or null array");
         }
 

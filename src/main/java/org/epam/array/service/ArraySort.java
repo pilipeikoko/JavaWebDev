@@ -10,7 +10,7 @@ public class ArraySort {
     private final static Logger LOGGER = LogManager.getLogger();
 
     public void bubbleSort(ArrayEntity arrayEntity) throws ArrayException {
-        if(!ArrayValidator.validateArray(arrayEntity)){
+        if (!ArrayValidator.isArrayEntityValid(arrayEntity)) {
             throw new ArrayException("Empty or null array");
         }
 
@@ -33,7 +33,7 @@ public class ArraySort {
     }
 
     public void gnomeSort(ArrayEntity arrayEntity) throws ArrayException {
-        if(!ArrayValidator.validateArray(arrayEntity)){
+        if (!ArrayValidator.isArrayEntityValid(arrayEntity)) {
             throw new ArrayException("Empty or null array");
         }
 
@@ -62,31 +62,31 @@ public class ArraySort {
     }
 
     public void cocktailSort(ArrayEntity arrayEntity) throws ArrayException {
-        if(!ArrayValidator.validateArray(arrayEntity)){
+        if (!ArrayValidator.isArrayEntityValid(arrayEntity)) {
             throw new ArrayException("Empty or null array");
         }
 
         int[] array = arrayEntity.getArray();
-        boolean elementSwapped = true;
+        boolean isElementSwapped = true;
 
         int startIndex = 0;
         int endIndex = array.length;
 
-        while (elementSwapped) {
-            elementSwapped = false;
+        while (isElementSwapped) {
+            isElementSwapped = false;
 
             for (int i = startIndex; i < endIndex - 1; ++i) {
                 if (array[i] > array[i + 1]) {
                     int temp = array[i];
                     array[i] = array[i + 1];
                     array[i + 1] = temp;
-                    elementSwapped = true;
+                    isElementSwapped = true;
                 }
             }
 
-            if (!elementSwapped)
+            if (!isElementSwapped)
                 break;
-            elementSwapped = false;
+            isElementSwapped = false;
 
             endIndex = endIndex - 1;
             for (int i = endIndex - 1; i >= startIndex; i--) {
@@ -94,7 +94,7 @@ public class ArraySort {
                     int temp = array[i];
                     array[i] = array[i + 1];
                     array[i + 1] = temp;
-                    elementSwapped = true;
+                    isElementSwapped = true;
                 }
             }
 

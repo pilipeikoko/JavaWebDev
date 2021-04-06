@@ -10,7 +10,7 @@ public class ArrayChange {
     private static final Logger LOGGER = LogManager.getLogger();
 
     public void changePrimeElementsToNewValue(ArrayEntity arrayEntity, int newValue) throws ArrayException {
-        if (!ArrayValidator.validateArray(arrayEntity)) {
+        if (!ArrayValidator.isArrayEntityValid(arrayEntity)) {
             throw new ArrayException("Empty or null array");
         }
 
@@ -44,5 +44,4 @@ public class ArrayChange {
 
         return flag;
     }
-
 }

@@ -8,7 +8,7 @@ public class ArrayValidatorTest {
     public void stringValidatorTest(){
         String stringArray = "3 2 -2";
 
-        boolean isStringCorrect = ArrayValidator.validateString(stringArray);
+        boolean isStringCorrect = ArrayValidator.isArrayStringValid(stringArray);
 
         Assert.assertTrue(isStringCorrect);
     }
@@ -17,7 +17,7 @@ public class ArrayValidatorTest {
     public void stringValidatorIncorrectTest(){
         String stringArray = "3 2 -a";
 
-        boolean isStringCorrect = ArrayValidator.validateString(stringArray);
+        boolean isStringCorrect = ArrayValidator.isArrayStringValid(stringArray);
 
         Assert.assertFalse(isStringCorrect);
     }
